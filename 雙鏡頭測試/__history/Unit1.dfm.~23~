@@ -1,0 +1,83 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 481
+  ClientWidth = 835
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 417
+    Height = 401
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 416
+    Top = 0
+    Width = 417
+    Height = 401
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 264
+    Top = 416
+    Width = 65
+    Height = 26
+    Caption = #36984#25799
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button1: TButton
+    Left = 264
+    Top = 448
+    Width = 65
+    Height = 25
+    Caption = #38364#38281
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button3: TButton
+    Left = 335
+    Top = 421
+    Width = 65
+    Height = 25
+    Caption = #20786#23384'A'
+    TabOrder = 4
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 335
+    Top = 448
+    Width = 65
+    Height = 25
+    Caption = #20786#23384'B'
+    TabOrder = 5
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 464
+    Top = 440
+    Width = 73
+    Height = 33
+    Caption = 'Button5'
+    TabOrder = 6
+    OnClick = Button5Click
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer1Timer
+    Left = 216
+    Top = 424
+  end
+end
