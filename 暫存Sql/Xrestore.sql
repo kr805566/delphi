@@ -1,0 +1,2 @@
+XRESTORE 'ºÖ´Ó¥ÐXE','D:\SQLDATA\ºÖ´Ó¥ÐXE.bak',''
+--DATABASE NAME, FILES NAME, PWD 1:ON 2:OFF

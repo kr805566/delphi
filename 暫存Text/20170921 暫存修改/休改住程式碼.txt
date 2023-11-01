@@ -1,0 +1,98 @@
+var
+  rmno: string;
+  service: currency;
+begin
+  write_log(self.Caption, Sender);
+  rmno := trim(Edit1.Text);
+  if rmno = '' then
+  begin
+    warbox(gv[77]); // 請輸入房號
+    Edit1.SetFocus;
+    exit;
+  end;
+  if strtocurr(trim(Edit7.Text)) = 0 then
+  begin
+    warbox(gv[193]); //     請輸入房租
+    Edit7.SetFocus;
+    exit;
+  end;
+  if strtocurr(trim(Edit7.Text)) < 0 then
+  begin
+    warbox(gv[194]); //房租不能為負數
+    Edit7.SetFocus;
+    exit;
+  end;
+
+  StartTransaction('QL01');
+  try
+    try
+      //交易
+      qySALE.edit;
+      qySALE['SADIS'] := ComboBox6.text;
+      qySALE['SARATE'] := strtocurr(Edit7.Text);
+      qySALE['SASERVICE'] := strtocurr(Edit4.Text);
+      qySALE['SAKIND'] := '住宿';
+      //qySALE['SATOTAL'] := qySALE['SATOTAL']
+      //  + strtocurr(Edit7.Text) - strtocurr(Edit2.Text)
+      //  + strtocurr(Edit4.Text) - strtocurr(Edit3.Text);
+      qySALE.Post;
+
+      //房間
+      qyROOM.edit;
+      qyROOM['RMKIND'] := qySALE['SAKIND'];
+      qyROOM['RMrate'] := qySALE['SARATE'];
+      qyROOM['RMDEPDATE'] := get_co_date(strtodatetime(qyROOM.fieldbyname('rmarrdate').AsString)); //退房時間判斷
+      qyROOM.Post;
+
+      //取消加休
+      sqlexec('delete from fare where itno=''Z02'' and sano=' + inttostr(qySale.fieldbyname('sano').asinteger) + ' and cpno=''' + gcpno + '''');
+
+      qyFARE.close;
+      qyFARE.ParamByName('sano').Value := qySale.fieldbyname('SANO').AsInteger;
+      qyFARE.ParamByName('itno').Value := 'Z01';
+      qyFARE.Open;
+      qyFARE.edit;
+      qyFARE['FAPRICE'] := strtocurr(Edit7.Text);
+      qyFARE['FADIS'] := qySALE['SADIS'];
+      qyFARE['FAAMOUNT'] := qyFARE['FAPRICE'];
+      qyFARE['itno'] := 'Z06';
+      qyFARE['UPDNAME'] := gusername;
+      qyFARE['UPDDATE'] := now;
+      qyFARE['FANOTE'] := '休改住'; //march add 1060921
+      qyFARE.Post;
+
+      //服務費
+      service := strtocurr(Edit4.text);
+      if service > 0 then
+      begin
+        qyFARE2.append;
+        qyFARE2['CPNO'] := gCPNO;
+        qyFARE2['SANO'] := qySale.fieldbyname('SANO').AsInteger;
+        qyFARE2['FADATE'] := edttocd(date);
+        qyFARE2['FATIME'] := edttoct(time);
+        qyFARE2['RMNO'] := qySALE.FieldByName('rmno').AsString;
+        qyFARE2['ITNO'] := 'Z04';
+        qyFARE2['FAPRICE'] := service;
+        qyFARE2['FAQTY'] := 1;
+        qyFARE2['FADIS'] := 0;
+        qyFARE2['FAAMOUNT'] := qyFARE2['FAPRICE'];
+        qyFARE2['KEYNAME'] := gusername;
+        qyFARE2['KEYDATE'] := now;
+        qyFARE2.Post;
+      end;
+
+      commit('QL01');
+    except on e: exception do
+      begin
+        Rollback('QL01');
+        LogNumber_db(e.Message);
+        raise;
+      end;
+    end;
+  finally
+    Rollback('QL01');
+  end;
+
+  close;
+  fmPLC.TimerRoomTimer(nil);
+end;

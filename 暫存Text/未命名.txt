@@ -1,0 +1,4 @@
+[Fatal Error] main.pas(7): File not found: 'frxExportXLS.dcu'
+[Fatal Error] frxExportXLS.pas(23): File not found: 'frx.inc'
+[Fatal Error] frxClass.pas(22): File not found: 'fs_iinterpreter.dcu'
+[Fatal Error] main.pas(623): File not found: 'wsc32.dcu'

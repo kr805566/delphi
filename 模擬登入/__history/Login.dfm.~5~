@@ -1,0 +1,110 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 150
+  ClientWidth = 336
+  Color = clMedGray
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #26032#32048#26126#39636
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Image1: TImage
+    AlignWithMargins = True
+    Left = 224
+    Top = 32
+    Width = 97
+    Height = 97
+    Center = True
+    ParentShowHint = False
+    Picture.Data = {
+      0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
+      0000001A0806000000D69B5E3F000000017352474200AECE1CE9000000046741
+      4D410000B18F0BFC61050000020C49444154484BB5D64D48545114C0F1C1F093
+      B04DA191D2C285180499E4B288DAE417840B770A6E752B6D44A5D44D2B459228
+      0917825B095722826D02459074A3E8422ADA883AA8287ED4FF0CEF0EF7BE39F3
+      E6E3BD16BF61DEE59E73EECC7BEFDE13AB9E8E47A90E93D8C5350EB0884E14C0
+      9E5B8CC7F640376E59D7B97A830BFC4DE33BEEE10906F113AF4C7021F6B18C9B
+      DE582EFAA015F5BBB4BE7F41CC24A8F706C52A2A60170852837398F86CCCE029
+      064C9297B027FCC60BD885D2790F3B36932B985B356A923CF206FC13A7701776
+      41BF15F863B3F10EC95B20CFC01F68138F318E5AD8858D3D687141FA9188B713
+      BD8536D9B68E11B4E13E8AB0016D6E900EA42CA0143FA00504097AF5D26986B3
+      806718460BB6A0054549DE3A67010DD026FE0FB24396C359C00DFC8216103579
+      664C5DE719E8851610B509A80B90C3620E5A50949E435D8090D7EA036413D282
+      C3DA86732ADAC58D0768C5376849C2E88153CFB9F0CC430B0E4B7A04E9019C7A
+      CE85E7214EA0250943FED5947A29039E269C424B948FC4D9AF51073DD25E7D45
+      D807720D65D06A042EC0B88D21E4B3904DDC819637411DB44867241B473EC5A5
+      07AC849637491BAC821C97B33883963C88ECF51F51022DBF433EA4A06C3E3B90
+      E6434B9A2DE917B26DE512EC8B467CC621B4E4E9C82F5E403BFCBD7F46DAA034
+      26AF31862548CB655EC923C8A929EDFB27742153CF18201EFB074FE36FE705E1
+      CE9D0000000049454E44AE426082}
+    ShowHint = False
+    Stretch = True
+  end
+  object Label1: TLabel
+    Left = 248
+    Top = 71
+    Width = 48
+    Height = 31
+    Caption = #30331#20837
+    Font.Charset = CHINESEBIG5_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = #24494#36575#27491#40657#39636
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 80
+    Top = 40
+    Width = 121
+    Height = 24
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 80
+    Top = 90
+    Width = 121
+    Height = 23
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = #26032#32048#26126#39636
+    Font.Style = [fsBold]
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object MSConnection1: TMSConnection
+    Database = 'sdac'
+    Username = 'AP01'
+    Server = '.\SQLEXPRESS'
+    LoginPrompt = False
+    Left = 80
+    Top = 120
+    EncryptedPassword = 'CEFFCEFFCFFFCCFFCEFFCEFFCFFFCCFF'
+  end
+  object MSQuery1: TMSQuery
+    Connection = MSConnection1
+    SQL.Strings = (
+      'SELECT * FROM XUSER')
+    Left = 112
+    Top = 120
+  end
+  object TrayIcon1: TTrayIcon
+    OnClick = TrayIcon1Click
+    Left = 144
+    Top = 120
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnMinimize = ApplicationEvents1Minimize
+    Left = 176
+    Top = 120
+  end
+end

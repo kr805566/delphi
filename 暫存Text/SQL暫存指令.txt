@@ -1,0 +1,4 @@
+sqlexec(
+        'update fare set faprice=:p1 ,faamount=:p2  ' +
+        'where sano=:p3 and fadate>=:p4  AND ITNO IN ('Z06','Z07')  AND RMNO= ', Edit7.Text,Edit7.Text, sano, edttocd(now)
+        );

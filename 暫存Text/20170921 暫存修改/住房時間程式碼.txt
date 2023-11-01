@@ -1,0 +1,9 @@
+//¦í©Ð
+      if timetostr(time) >= gp[343] then
+        d := edttocd(DateTimePicker1.date)
+      else
+        d := edttocd(incday(DateTimePicker1.date,1));
+      if (d + ' ' + edttoct(now) >= MSSQL1.fieldbyname('RMARRDATE').asstring)
+        and (edttocd(DateTimePicker1.date) < copy(MSSQL1.fieldbyname('RMDEPDATE').asstring, 1, 9))
+        and (MSSQL1.fieldbyname('RMARRDATE').asstring > '')
+        then

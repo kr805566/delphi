@@ -1,0 +1,25 @@
+SQL: 一天
+1. SUM, count,  top, WHERE OR, IN, and, ORDER  BY,  GROUP BY asc desc, HAVING
+2. JOIN, LEFT JOIN, RIGHT JOIN
+3. DELETE , UPDATE 多個欄位
+4. DELETE , UPDATE 前 a.BACKUP(指令) b. select (不能相反)
+5. NULL
+6. RESTORE 圖形操作或指令
+
+Delphi: 二天
+1. ParamByName
+2. addwhere
+3. CachedUpdates
+4. master / detail
+5. IndexFieldNames
+6. 虛擬 dataset
+7. 虛擬 field
+8. readonly
+9. before post, before delete, after post, after delete
+10.常用元件
+     button, edit, lable, panel, grid, comobox, listbox
+11. field editor 拖拉
+12. except
+13. log
+14. showmessage
+

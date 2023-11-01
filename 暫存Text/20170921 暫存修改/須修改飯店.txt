@@ -1,0 +1,22 @@
+H101  Morning_call 參數不足 
+H103 Ok
+H104 Ok
+H105 Ok 
+H106 Ok
+H107 Ok
+H108 Ok
+H111 沒有Source
+H112 Ok
+H114 Ok
+H115 Ok
+H116 Ok
+H117 Ok
+H118 Ok
+H120 Ok
+H121 Ok
+H122 Ok
+H123 Ok
+H124 Ok
+H128 Ok But Error roomseek6 
+H129 Ok
+H130 Ok

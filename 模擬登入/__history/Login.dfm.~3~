@@ -1,0 +1,61 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 301
+  ClientWidth = 458
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #26032#32048#26126#39636
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Edit1: TEdit
+    Left = 176
+    Top = 88
+    Width = 121
+    Height = 24
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 176
+    Top = 128
+    Width = 121
+    Height = 24
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 176
+    Top = 184
+    Width = 73
+    Height = 33
+    Caption = #30331#20837
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object MSConnection1: TMSConnection
+    Database = 'sdac'
+    Username = 'AP01'
+    Server = '.\SQLEXPRESS'
+    LoginPrompt = False
+    Left = 40
+    Top = 48
+    EncryptedPassword = 'CEFFCEFFCFFFCCFFCEFFCEFFCFFFCCFF'
+  end
+  object MSQuery1: TMSQuery
+    Connection = MSConnection1
+    SQL.Strings = (
+      'SELECT * FROM XUSER')
+    Left = 40
+    Top = 96
+  end
+  object TrayIcon1: TTrayIcon
+    Left = 368
+    Top = 256
+  end
+end

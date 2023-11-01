@@ -1,0 +1,12 @@
+: TMSConnection 
+: TUniConnection
+
+: TMSQuery      
+: TUniQuery
+
+: TMSSQL        
+: TUniSQL
+
+: TMSStoredProc
+: TUniStoredProc
+

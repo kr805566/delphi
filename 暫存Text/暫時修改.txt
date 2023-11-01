@@ -1,0 +1,22 @@
+ if fmLiveSeek2.ModalResult = 2 then
+      begin
+        {if check_right(qyBase_list, 'add') = false then exit;
+        dsMain.DataSet.Cancel;
+        write_log(self.Caption, Sender);
+        enable;
+        dsMain.DataSet.insert;
+        dsMain.DataSet['CPNO'] := gCPNO;
+        DBEdit4.SetFocus;}
+
+        qyOrders['ODNAME'] := '';
+        qyOrders['ODSEX'] := '';
+        qyOrders['ODCONTACT'] := '';
+        qyOrders['ODCONTACT_TEL'] := '';
+        qyOrders['ODTEL'] := '';
+        qyOrders['ODCELL'] := '';
+        qyOrders['ODFAX'] := '';
+        qyOrders['CONAME3'] := '';
+        qyOrders['ODMAIL'] := '';
+
+
+      end;

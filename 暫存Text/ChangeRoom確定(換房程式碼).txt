@@ -1,0 +1,308 @@
+var
+  rmno1, rmno2: string;
+  sano: integer;
+  odid: string;
+  sql: string;
+  b: string;
+  EXTNO2: string;
+  MR_AUTO: integer;
+  FANO: integer;
+begin
+  write_log(self.Caption, Sender);
+  rmno1 := trim(Edit1.Text);
+  rmno2 := trim(Edit2.Text);
+  if rmno1 = '' then
+  begin
+    warbox(gv[216]); //請輸入原房號
+    Edit1.SetFocus;
+    exit;
+  end;
+  if rmno2 = '' then
+  begin
+    warbox(gv[217]); //請輸入新房號
+    Edit2.SetFocus;
+    exit;
+  end;
+  if rmno1 = rmno2 then //march add 990310
+  begin
+    warbox('二個房號不能相同，請檢查');
+    Edit2.SetFocus;
+    exit;
+  end;
+
+  if strtocurr(trim(Edit7.Text)) = 0 then
+    if isOther_room(rmno1) = false then //march add 1040629
+    begin
+      warbox(gv[193]); //請輸入房租
+      Edit7.SetFocus;
+      exit;
+    end;
+
+  if strtocurr(trim(Edit7.Text)) < 0 then
+  begin
+    warbox(gv[194]); //房租不能為負數
+    Edit7.SetFocus;
+    exit;
+  end;
+  if trim(Edit6.Text) = '' then
+  begin
+    //warbox('請輸入備註');
+    //Edit6.SetFocus;
+    //exit;
+  end;
+
+  StartTransaction('CR01');
+  try
+    try
+      qyRoom2.Edit;
+      qyRoom2['RMCUST'] := qyRoom.FieldByName('RMCUST').AsString;
+      qyRoom2['RMMORCALL'] := qyRoom.FieldByName('RMMORCALL').AsString;
+      qyRoom2['RMMORCALL_YN'] := qyRoom.FieldByName('RMMORCALL_YN').AsString;
+      qyRoom2['RMCOMP'] := qyRoom.FieldByName('RMCOMP').AsString;
+      qyRoom2['SANO'] := qyRoom.FieldByName('SANO').AsInteger;
+      qyRoom2['RMARRDATE'] := qyRoom.FieldByName('RMARRDATE').AsString;
+      qyRoom2['RMKIND'] := qyRoom.FieldByName('RMKIND').AsString;
+      qyRoom2['RMDEPDATE'] := qyRoom.FieldByName('RMDEPDATE').AsString;
+      qyRoom2['RMTOTAL'] := qyRoom.FieldByName('RMTOTAL').AsCurrency;
+      qyRoom2['RMPAY'] := qyRoom.FieldByName('RMPAY').AsCurrency;
+      qyRoom2['RMOVR_YN'] := qyRoom.FieldByName('RMOVR_YN').AsString; ;
+      qyRoom2['RMSTAT'] := qyRoom.FieldByName('RMSTAT').AsString;
+      qyRoom2['RMNOTE'] := qyRoom.FieldByName('RMNOTE').AsString;
+      qyRoom2['RMTEL'] := qyRoom.FieldByName('RMTEL').AsCurrency;
+      qyRoom2['ODCOLOR'] := qyRoom['ODCOLOR']; //march add 990409
+      qyRoom2['CPNO'] := gCPNO; //march add 1000418
+      qyRoom2.Post;
+
+      qySale2.close;
+      qySale2.ParamByName('sano').Value := qyRoom2.FieldByName('sano').Asinteger;
+      qySale2.Open;
+      if qySale2.IsEmpty then
+      begin
+        Rollback('CR01');
+        warbox('找不到交易資料');
+        abort;
+      end;
+      qySale2.Edit;
+      qySale2['sarate'] := strtoint(edit7.text);
+      qySale2['saservice'] := strtoint(edit5.text);
+      qySale2['rmno'] := trim(edit2.text);
+      if trim(combobox6.text) = '' then
+        combobox6.text := '0';
+      qySale2['sadis'] := combobox6.text;
+      qySale2.post;
+
+      //公帳房 march add 990310
+      MSQuery1.Close;
+      MSQuery1.ParamByName('p1').Value := qyRoom2.FieldByName('sano').Asinteger;
+      MSQuery1.Open;
+      if MSQuery1.FieldByName('ODMPAYTKIND').Asstring = '1' then
+        sano := get_sano(MSQuery1.FieldByName('ODMRMNO').Asstring)
+      else
+        sano := qySale2.FieldByName('sano').Asinteger;
+      //sano := qyRoom2.FieldByName('sano').Asinteger; //march edit 1020419
+
+      if MSQuery1.FieldByName('ODMRMNO').Asstring = rmno1 then //march add 990310
+      begin
+        sqlexec('update orders set ODMRMNO=''' + rmno2 + '''' + 'where odid=''' + MSQuery1.fieldbyname('odid').AsString + '''' + ' and cpno=''' + gcpno + '''');
+      end;
+
+      //MrLin Add 2017/9/13
+      sano := sqlval('select sano from room where rmno=:p1', Edit1.text);
+      sqlexec(
+        'update fare set faprice=:p1 ,faamount=:p2  ' +
+        'where sano=:p3 and fadate>=:p4 ' +
+        'AND ITNO IN (''Z06'',''Z07'') AND RMNO=:p5 '
+        , Edit7.Text, Edit7.Text, sano, edttocd(now), EDIT1.Text
+        );
+
+      //MrLin Del 2017/9/13
+     //房租
+     {qyFare2.close;
+     qyFare2.ParamByName('sano').Value := sano;
+     qyFare2.ParamByName('rmno').Value := rmno1;
+     qyFare2.Open;
+     if qyFare2.FieldByName('CLOSED').AsString = 'N' then
+     begin
+       qyFare2.edit;
+       qyFare2['FAPRICE'] := strtocurr(Edit7.Text);
+       qyFare2['FAAMOUNT'] := qyFare2['FAPRICE'];
+       qyFare2['UPDNAME'] := gusername;
+       qyFare2['UPDDATE'] := now;
+       qyFare2.Post;
+     end
+     else
+     begin
+       //march add 1020419
+       qyFare3.close;
+       qyFare3.ParamByName('sano').Value := sano;
+       qyFare3.ParamByName('rmno').Value := rmno2;
+       qyFare3.Open;
+       //march add 1020419
+
+       if strtocurr(Edit7.text) <> strtocurr(Edit3.text) then
+       begin
+         sano := sqlval('select sano from room where rmno=:p1', Edit1.text);
+         FANO := sqlval('select FANO from fare where sano=:p1', sano);
+         sqlexec('update fare set FAPRICE=:p1 where FANO=:p2', strtocurr(Edit7.text), FANO);
+       end;
+     end;}
+
+     //服務費
+      qyFare3.close;
+      qyFare3.ParamByName('sano').Value := sano;
+      qyFare3.ParamByName('rmno').Value := rmno1;
+      qyFare3.Open;
+      if qyFare3.RecordCount > 0 then
+      begin
+        if qyFare3.FieldByName('CLOSED').AsString = 'N' then
+        begin
+          qyFare3.edit;
+          qyFare3['FAPRICE'] := strtocurr(Edit5.Text);
+          qyFare3['FAAMOUNT'] := qyFare2['FAPRICE'];
+          qyFare3['UPDNAME'] := gusername;
+          qyFare3['UPDDATE'] := now;
+          qyFare3.Post;
+        end
+        else
+        begin
+          if strtocurr(Edit4.text) <> strtocurr(Edit5.text) then
+          begin
+            qyFare3.append;
+            qyFare3['FADATE'] := edttocd(date);
+            qyFare3['FATIME'] := edttoct(time);
+            qyFare3['RMNO'] := trim(edit2.text);
+            qyFare3['CPNO'] := gCPNO;
+            qyFare3['faprice'] := strtocurr(Edit5.text) - strtocurr(Edit4.text);
+            qyFare3['fadis'] := 0;
+            qyFare3['faamount'] := qyFare3['faprice'];
+            qyFare3['keyname'] := gusername;
+            qyFare3['keydate'] := now;
+            qyFare3['sano'] := sano;
+            qyFare3['ITNO'] := 'Z12';
+            qyFARE3['SANO_SOURCE'] := qySale2['SANO'];
+            qyFare3.post;
+          end;
+        end;
+      end;
+
+      //訂房資料
+      //march edit 1031118
+      odid := get_odid(rmno1, '');
+      xSelect(
+        'SELECT    count(*) qty ' +
+        'FROM          ORDERS INNER JOIN ' +
+        '                       ORDERS_D ON  ORDERS.ODID =  ORDERS_D.ODID ' +
+        'where ORDERS_D.OBQTY=1 and ORDERS.ODID=''' + odid + ''' and ORDERS.ODSTAT in (''5'') ');
+      if (qySelect.FieldByName('qty').AsInteger = 1) then //只有一筆明細
+      begin
+        MSSQL2.ParamByName('p1').Value := rmno2;
+        MSSQL2.ParamByName('p2').Value := odid;
+        MSSQL2.Execute;
+      end
+      else
+      begin
+        sql :=
+          'SELECT    count(*) ' +
+          'FROM         ORDERS INNER JOIN ' +
+          '                      ORDERS_D ON ORDERS.ODID = ORDERS_D.ODID AND ORDERS.CPNO = ORDERS_D.CPNO  INNER JOIN ' +
+          '                      ARRANGE ON ORDERS_D.OBNO = ARRANGE.OBNO AND ORDERS_D.CPNO = ARRANGE.CPNO  INNER JOIN  ' +
+          '                      SALE ON ARRANGE.SANO = SALE.SANO AND ARRANGE.CPNO = SALE.CPNO  INNER JOIN  ' +
+          '                      ROOM ON SALE.SANO = ROOM.SANO AND SALE.CPNO = ROOM.CPNO   ' +
+          'where ROOM.RMNO=''' + rmno1 + ''' and ORDERS.ODMPAYTKIND=''1'' and ORDERS.ODMRMNO=ROOM.RMNO ' + ' and ORDERS.cpno=''' + gcpno + ''' ';
+        if sqlval(sql) = 0 then //非公帳房
+        begin
+          dm1.MSQuery4_2.close;
+          dm1.MSQuery4_2.ParamByName('p1').Value := odid;
+          dm1.MSQuery4_2.ParamByName('p2').Value := edttocd(now);
+          dm1.MSQuery4_2.Open;
+          if dm1.MSQuery4_2.FieldByName('OBQTY').AsInteger = 1 then //只有一間
+          begin
+            MSSQL3.ParamByName('p1').Value := rmno2;
+            MSSQL3.ParamByName('p2').Value := dm1.MSQuery4_2.FieldByName('OBNO').AsInteger;
+            MSSQL3.Execute;
+          end;
+        end;
+      end;
+      //march edit 1031118
+
+      //發票
+      qyINV_M.Close;
+      qyINV_M.ParamByName('p1').Value := qyRoom.FieldByName('sano').Asinteger;
+      qyINV_M.Open;
+      if qyINV_M.IsEmpty = false then
+      begin
+        qyINV_M.edit;
+        qyINV_M['rmno'] := EDIT2.Text;
+        qyINV_M.Post;
+      end;
+
+      if MSQuery1.fieldbyname('odid').AsString > '' then //march add 1030330
+        sqlexec('update ORDER_ASSIGN set RMNO=''' + rmno2 + ''' where ODID=''' + MSQuery1.fieldbyname('odid').AsString + ''' AND RMNO=''' + rmno1 + '''');
+
+      //march add 1040615
+      sqlexec(
+        'update fare set rmno=:p1  ' +
+        'where sano=:p2 and fadate>=:p3 ', Edit2.text, sano, edttocd(now)
+        );
+
+
+
+      clean(qyRoom);
+
+      qyRoom.edit;
+      qyRoom['rmstat'] := gv[12]; //待掃
+      qyRoom['RMBEGTIME'] := edttocdt(Now);
+      qyRoom.post;
+
+      commit('CR01');
+    except on e: exception do
+      begin
+        Rollback('CR01');
+        LogNumber_db(e.Message);
+        raise;
+      end;
+    end;
+  finally
+    Rollback('CR01');
+  end;
+
+  if gCPID = 'H104' then
+  begin
+    plcout2(sqlval('select MACNO from plc where rmno=''' + rmno2 + ''''), $22);
+    plcout2(sqlval('select MACNO from plc where rmno=''' + rmno1 + ''''), $33);
+  end;
+
+  if gtel = true then
+  begin
+    TEL_CI(rmno2);
+    TEL_CO(rmno1);
+
+    //morning
+    MR_AUTO := sqlval('select MR_AUTO from ROOM where  rmno=:p1', rmno1);
+    if MR_AUTO > 0 then
+    begin
+      xSelect('select MR_DATE, MR_TIME, ODID from MORNING_LOG where MR_AUTO=:p1', MR_AUTO);
+      dm1.MSSQL_MR.ParamByName('MR_DATE').Value := qySelect.FieldByName('MR_DATE').AsString;
+      dm1.MSSQL_MR.ParamByName('MR_TIME').Value := qySelect.FieldByName('MR_TIME').AsString;
+      dm1.MSSQL_MR.ParamByName('RMNO').Value := rmno2;
+      dm1.MSSQL_MR.ParamByName('OPDT').Value := now;
+      dm1.MSSQL_MR.ParamByName('KEYNAME').Value := gusername;
+      dm1.MSSQL_MR.ParamByName('STAT').Value := 1;
+      dm1.MSSQL_MR.ParamByName('odid').Value := qySelect.FieldByName('odid').AsString;
+      dm1.MSSQL_MR.ParamByName('sano').Value := get_sano(rmno2);
+      dm1.MSSQL_MR.Execute;
+
+      b := qySelect.FieldByName('MR_TIME').AsString;
+      EXTNO2 := sqlval('select EXTNO2 from TELGROUP where extno=:p1 and cpno=:p2', rmno2, gcpno);
+      if EXTNO2 = '' then
+        EXTNO2 := rmno2;
+      Morning_call(EXTNO2, copy(b, 1, 2) + copy(b, 4, 2), '0');
+
+      mr_cancel(rmno1);
+    end;
+  end;
+
+  xEvent('房間換房,舊房號:' + Edit1.Text + ',新房號:' + Edit2.Text, 'Z');
+  close;
+  fmPLC.TimerRoomTimer(nil);
+end;

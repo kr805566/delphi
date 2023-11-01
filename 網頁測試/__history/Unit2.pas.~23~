@@ -1,0 +1,91 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, OleCtrls, SHDocVw, StdCtrls, mshtml,
+  ActiveX, OleServer, StdVCL, ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    WebBrowser1: TWebBrowser;
+    Button1: TButton;
+    Button2: TButton;
+    Edit1: TEdit;
+    Button3: TButton;
+    Timer1: TTimer;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+
+     procedure EmbeddedWB1ScriptError(Sender: TObject; ErrorLine,
+      ErrorCharacter, ErrorCode, ErrorMessage, ErrorUrl: String;
+      var ContinueScript, Showdialog: Boolean);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+ procedure TForm2.Button1Click(Sender: TObject);
+begin
+//WebBrowser1.Navigate('file:///C:/Users/MrLin/Desktop/text.html');
+//WebBrowser1.Navigate('https://www.google.com.tw/');
+
+//WebBrowser1.Navigate('https://www.google.com.tw/search?ei=O_ogWuTBGYyn8QXB2bOABQ&q=Google&oq=Google&gs_l=psy-ab.12..0i131i67k1j0j0i131k1l2j0l6.1509.6524.0.7403.1.1.0.0.0.0.44.44.1.1.0....0...1c.1.64.psy-ab..0.1.43....0._lpHL0-YkAE');
+WebBrowser1.Navigate('http://www.blueshop.com.tw/board/FUM20050124191756KKC/BRD20060403095844EAL.html');
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+WebBrowser1.OleObject.document.all.item('btnK').click; {Š»‰Û}
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+if Button3.Caption='¦Û°ÊÂIÀ»' then
+begin
+Timer1.Interval:=StrToInt(Edit1.Text);
+Timer1.Enabled:=True;
+Button3.Caption:='¦Û°ÊÃö³¬';
+end
+else
+begin
+Timer1.Enabled:=False;
+Button3.Caption:='¦Û°ÊÂIÀ»';
+end;
+
+
+end;
+
+procedure TForm2.FormResize(Sender: TObject);
+begin
+WebBrowser1.Height:= Form2.Height-100 ;
+WebBrowser1.Width:= Form2.Width-100  ;
+end;
+
+procedure TForm2.Timer1Timer(Sender: TObject);
+begin
+Button2.Click;
+end;
+
+
+procedure TForm2.EmbeddedWB1ScriptError(Sender: TObject; ErrorLine,
+  ErrorCharacter, ErrorCode, ErrorMessage, ErrorUrl: String;
+  var ContinueScript, Showdialog: Boolean);
+begin
+  ContinueScript :=true;//Ä~Äò°õ¦æ¸}¥»
+  Showdialog :=false;   //¤£Åã¥Ü¸}¥»¿ù»~°T®§µøµ¡
+end;
+
+end.
