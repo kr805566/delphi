@@ -1,0 +1,14 @@
+標題: Microsoft SQL Server 2012 安裝程式
+------------------------------
+
+發生下列錯誤:
+
+The installer has encountered an unexpected error. The error code is 2203. Database: C:\Windows\Installer\3c26b.ipi. Cannot open database file. System error -2147287035.
+
+如需說明，請按一下: http://go.microsoft.com/fwlink?LinkID=20476&ProdName=Microsoft%20SQL%20Server&EvtSrc=setup.rll&EvtID=50000&ProdVer=11.0.6020.0&EvtType=0xDF039760%25401201%25401
+
+------------------------------
+按鈕:
+
+確定
+------------------------------

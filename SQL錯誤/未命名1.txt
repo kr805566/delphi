@@ -1,0 +1,14 @@
+標題: Microsoft SQL Server 2014 安裝程式
+------------------------------
+
+發生下列錯誤:
+
+無法開啟機碼: UNKNOWN\Components\1FA18F7974E099CD0AF18C3B9B1A1EE8\3A7A134378260B64A81FEB42251AEF26。請確認您擁有存取該機碼的足夠權限，或連絡您的支援人員。
+
+如需說明，請按一下: http://go.microsoft.com/fwlink?LinkID=20476&ProdName=Microsoft%20SQL%20Server&EvtSrc=setup.rll&EvtID=50000&ProdVer=12.0.5000.0&EvtType=0xDF039760%25401201%25401
+
+------------------------------
+按鈕:
+
+確定
+------------------------------

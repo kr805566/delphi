@@ -1,0 +1,14 @@
+TITLE: Microsoft SQL Server 2012  Setup
+------------------------------
+
+The following error has occurred:
+
+The installer has encountered an unexpected error. The error code is 2203. Database: C:\Windows\Installer\3c0c0.ipi. Cannot open database file. System error -2147287035.
+
+For help, click: http://go.microsoft.com/fwlink?LinkID=20476&ProdName=Microsoft%20SQL%20Server&EvtSrc=setup.rll&EvtID=50000&ProdVer=11.0.6020.0&EvtType=0xDF039760%25401201%25401
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
