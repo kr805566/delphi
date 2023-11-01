@@ -1,0 +1,96 @@
+unit Unit1;
+interface
+uses Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls;
+
+
+type TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private { Private declarations }
+  public { Public declarations }
+  end;
+const WH_KEYBOARD_LL = $80000000;
+var Form1: TForm1;
+  hKeyHook: Integer;
+  hKeyHookwin98: integer;
+
+implementation
+
+{$R *.dfm}
+
+function KeyHook(iCode: Integer; wParam: wParam; Key: lParam): LRESULT; stdcall;
+begin
+  Result := 0;
+  if iCode < 0 then //®Ú¾ÚSDK»¡©ú¡A­YiCode¤p©ó0¡A½Õ¥ÎCallNextHookEx¨Ãªð¦^
+  begin
+    Result := CallNextHookEx(hKeyHook, iCode, wParam, key);
+    Exit;
+  end;
+  //¦b¦¹„z„¦©w»Ý«Ì½ªªº«öŠ~,¦¹„zƒo«Ì½ªCtrl c,Ctrl v,ctrl x
+  if ((key and WH_KEYBOARD_LL) = 0) and (GetKeyState(vk_control) < 0) and ((wParam = Ord('X')) or (wParam = Ord('V')) or (wParam = Ord('C'))) then
+    //¦¹„z«Ì½ªF1¡A„ã„ñ¤£„ã‹¹¡A¦Û¤v«ö»Ý­×§ï
+  //if ((key and WH_KEYBOARD_LL) = 0) and (GetKeyState(vk_F1) < 0) then
+  begin
+    Result := 1;
+    Exit;
+  end;
+end;
+
+//†¿¦æ«Ì½ª
+
+procedure TForm1.Button1Click(Sender: TObject);
+var temp: integer;
+begin
+  if Win32Platform = VER_PLATFORM_WIN32_WINDOWS then //win98
+  begin
+    SystemParametersInfo(Spi_screensaverrunning, 1, @temp, 0);
+    hKeyHookwin98 := SetWindowsHookEx(WH_KEYBOARD, KeyHook, HInstance, 0);
+  end
+  else // win2000
+  begin hKeyHook := SetWindowsHookEx(WH_KEYBOARD_LL, KeyHook, HInstance, 0);
+  end;
+end;
+//¸Ñ°£«Ì½ª
+
+procedure TForm1.Button2Click(Sender: TObject);
+var temp: integer;
+begin
+  if Win32Platform = VER_PLATFORM_WIN32_WINDOWS then
+  begin
+    SystemParametersInfo(spi_screensaverrunning, 0, @temp, 0);
+    UnHookWindowsHookEx(hKeyHookwin98);
+    hKeyHookwin98 := 0;
+  end
+  else
+  begin
+    UnHookWindowsHookEx(hKeyHook); hKeyHook := 0;
+  end;
+end;
+
+
+
+//  Keyboard Hook ¦^©I¨ç¼Æ¤º®e 
+
+
+//  Destructor 
+
+
+//  ¤¸¥ó¤º³¡ÀË¬d user ¬O§_ idle, 
+//  if  yes ==> Ä²µo Notify Event 
+procedure TBvIdleCheck._TimeHit(Sender: TObject); 
+var 
+    tNow: TDateTime; 
+    nSecElapsed: integer; 
+begin // [ 
+    tNow=Now; 
+    nSecElapsed=TimeDiffSec(tNow, s_tIoEvent); 
+    if  nSecElapsed<FIdleTime then exit; 
+if  Assigned(FOnIdle) then FOnIdle(Sender); 
+    s_tIoEvent:=tNow; 
+end; // ] TBvIdleCheck._TimeHit
+
+
+end.
+
