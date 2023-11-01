@@ -1,0 +1,1042 @@
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 21 Jul 2017 20:07:37 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.25
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10304; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|005EA323|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|006010C0|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0060109C|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|00606E55|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|00611721|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+---------------------------------------------------------------------------------------------------------
+  2.1 Date          : Sat, 22 Jul 2017 05:39:23 +0800
+  2.2 Address       : 00402808
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.25
+  2.5 Type          : EAccessViolation
+  2.6 Message       : Access violation at address 00402808 in module 'PLC.exe'. Read of address 65262420.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module   |Unit                   |Class             |Procedure/Method         |Line    |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=2108; Priority=0; Class=; [Main]                                          |
+|------------------------------------------------------------------------------------------------|
+|00402808|PLC.exe  |                       |                  |                         |        |
+|771C25C0|ntdll.dll|                       |                  |RtlAcquireSRWLockShared  |        |
+|771C2609|ntdll.dll|                       |                  |RtlReleaseSRWLockShared  |        |
+|771A015E|ntdll.dll|                       |                  |KiUserExceptionDispatcher|        |
+|005EA323|PLC.exe  |OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy                  |11189[2]|
+|006010C0|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1973[2] |
+|0060109C|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1971[0] |
+|00606E55|PLC.exe  |OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy                  |4137[10]|
+|00611721|PLC.exe  |PLC.dpr                |                  |                         |32[16]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 22 Jul 2017 08:18:31 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.25
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=4636; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|005EA323|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|006010C0|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0060109C|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|00606E55|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|00611721|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 22 Jul 2017 13:03:37 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.25
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10248; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|005EA323|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|006010C0|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0060109C|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|00606E55|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|00611721|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+---------------------------------------------------------------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 07:28:29 +0800
+  2.2 Address       : 00402808
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EAccessViolation
+  2.6 Message       : Access violation at address 00402808 in module 'PLC.exe'. Read of address 63A0EE34.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module   |Unit                   |Class             |Procedure/Method         |Line    |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=11056; Priority=0; Class=; [Main]                                         |
+|------------------------------------------------------------------------------------------------|
+|00402808|PLC.exe  |                       |                  |                         |        |
+|771C25C0|ntdll.dll|                       |                  |RtlAcquireSRWLockShared  |        |
+|771C2609|ntdll.dll|                       |                  |RtlReleaseSRWLockShared  |        |
+|771A015E|ntdll.dll|                       |                  |KiUserExceptionDispatcher|        |
+|006046BB|PLC.exe  |OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy                  |11189[2]|
+|0061B458|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1973[2] |
+|0061B434|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1971[0] |
+|006211ED|PLC.exe  |OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy                  |4137[10]|
+|0062C949|PLC.exe  |PLC.dpr                |                  |                         |32[16]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 14:43:10 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=4592; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 15:06:42 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=12936; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 16:36:45 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=13272; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 18:44:42 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10212; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sat, 12 Aug 2017 19:54:16 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10888; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Sun, 13 Aug 2017 08:32:07 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=11576; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Mon, 14 Aug 2017 15:05:05 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=13480; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Tue, 15 Aug 2017 20:06:52 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=5516; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+---------------------------------------------------------------------------------------------------------
+  2.1 Date          : Wed, 16 Aug 2017 14:59:31 +0800
+  2.2 Address       : 00402808
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EAccessViolation
+  2.6 Message       : Access violation at address 00402808 in module 'PLC.exe'. Read of address 652F9F88.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module   |Unit                   |Class             |Procedure/Method         |Line    |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=6176; Priority=0; Class=; [Main]                                          |
+|------------------------------------------------------------------------------------------------|
+|00402808|PLC.exe  |                       |                  |                         |        |
+|77BC25C0|ntdll.dll|                       |                  |RtlAcquireSRWLockShared  |        |
+|77BC2609|ntdll.dll|                       |                  |RtlReleaseSRWLockShared  |        |
+|77BA015E|ntdll.dll|                       |                  |KiUserExceptionDispatcher|        |
+|006046BB|PLC.exe  |OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy                  |11189[2]|
+|0061B458|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1973[2] |
+|0061B434|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1971[0] |
+|006211ED|PLC.exe  |OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy                  |4137[10]|
+|0062C949|PLC.exe  |PLC.dpr                |                  |                         |32[16]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 07:40:41 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=1620; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 10:36:23 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=8828; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+---------------------------------------------------------------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 11:39:02 +0800
+  2.2 Address       : 00402808
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EAccessViolation
+  2.6 Message       : Access violation at address 00402808 in module 'PLC.exe'. Read of address 63A122C0.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module   |Unit                   |Class             |Procedure/Method         |Line    |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=10068; Priority=0; Class=; [Main]                                         |
+|------------------------------------------------------------------------------------------------|
+|00402808|PLC.exe  |                       |                  |                         |        |
+|77BC25C0|ntdll.dll|                       |                  |RtlAcquireSRWLockShared  |        |
+|77BC2609|ntdll.dll|                       |                  |RtlReleaseSRWLockShared  |        |
+|77BA015E|ntdll.dll|                       |                  |KiUserExceptionDispatcher|        |
+|006046BB|PLC.exe  |OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy                  |11189[2]|
+|0061B458|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1973[2] |
+|0061B434|PLC.exe  |OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy                  |1971[0] |
+|006211ED|PLC.exe  |OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy                  |4137[10]|
+|0062C949|PLC.exe  |PLC.dpr                |                  |                         |32[16]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 11:54:31 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10160; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 12:11:23 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=5812; Priority=0; Class=; [Main]                               |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 12:34:40 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=10348; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+EurekaLog 6.1.04
+
+Exception:
+-----------------------------------------------------
+  2.1 Date          : Fri, 18 Aug 2017 18:19:46 +0800
+  2.2 Address       : 00402BBF
+  2.3 Module Name   : PLC.exe
+  2.4 Module Version: 1.5.0.28
+  2.5 Type          : EInvalidPointer
+  2.6 Message       : Invalid pointer operation.
+
+User:
+----------------
+  3.1 ID  : user
+  3.2 Name: AXD
+
+Computer:
+------------------
+  5.1 Name: AXD-PC
+
+
+Call Stack Information:
+---------------------------------------------------------------------------------------
+|Address |Module |Unit                   |Class             |Procedure/Method|Line    |
+---------------------------------------------------------------------------------------
+|*Exception Thread: ID=11000; Priority=0; Class=; [Main]                              |
+|-------------------------------------------------------------------------------------|
+|00402BBF|PLC.exe|                       |                  |                |        |
+|006046BB|PLC.exe|OverbyteIcsWSocket.pas |TCustomLineWSocket|Destroy         |11189[2]|
+|0061B458|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1973[2] |
+|0061B434|PLC.exe|OverbyteIcsSmtpProt.pas|TCustomSmtpClient |Destroy         |1971[0] |
+|006211ED|PLC.exe|OverbyteIcsSmtpProt.pas|TSmtpCli          |Destroy         |4137[10]|
+|0062C949|PLC.exe|PLC.dpr                |                  |                |32[16]  |
+---------------------------------------------------------------------------------------
+
+Modules Information:
+--------------------
+
+Processes Information:
+----------------------
+
+Assembler Information:
+----------------------
+
+Registers:
+----------
+
+
+
+
