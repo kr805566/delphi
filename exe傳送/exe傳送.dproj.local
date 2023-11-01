@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/11/22 09:13:26.666.pas,C:\Users\MrLin\Documents\RAD Studio\Projects\Unit2.pas=D:\MrLinProjectTest\傳送EXE\Unit2.pas</Transaction>
+    <Transaction>2017/11/22 09:13:26.666.dfm,C:\Users\MrLin\Documents\RAD Studio\Projects\Unit2.dfm=D:\MrLinProjectTest\傳送EXE\Unit2.dfm</Transaction>
+    <Transaction>2017/11/22 09:13:27.786.dproj,C:\Users\MrLin\Documents\RAD Studio\Projects\Project3.dproj=D:\MrLinProjectTest\傳送EXE\Project3.dproj</Transaction>
+    <Transaction>2017/11/22 10:20:42.171.dproj,D:\MrLinProjectTest\傳送EXE\Project3.dproj=D:\MrLinProjectTest\傳送EXE\Project.dproj</Transaction>
+    <Transaction>2017/11/22 10:21:12.290.dproj,D:\MrLinProjectTest\傳送EXE\Project.dproj=D:\MrLinProjectTest\傳送EXE\exe傳送.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
