@@ -1,0 +1,30 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'Form2'
+  ClientHeight = 576
+  ClientWidth = 736
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClick = Button1Click
+  OnDblClick = FormDblClick
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = -712
+    Top = -552
+    Width = 736
+    Height = 576
+    AutoSize = True
+    OnClick = Button1Click
+    OnDblClick = FormDblClick
+  end
+end

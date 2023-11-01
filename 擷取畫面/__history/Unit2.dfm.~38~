@@ -1,0 +1,54 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Align = alClient
+  AlphaBlend = True
+  AlphaBlendValue = 1
+  BorderStyle = bsNone
+  Caption = 'Form2'
+  ClientHeight = 576
+  ClientWidth = 736
+  Color = clWhite
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -32
+  Font.Name = 'Times New Roman'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnClick = Button1Click
+  OnDblClick = FormDblClick
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 36
+  object Image1: TImage
+    Left = -712
+    Top = -552
+    Width = 736
+    Height = 576
+    AutoSize = True
+    OnClick = Button1Click
+    OnDblClick = FormDblClick
+  end
+  object Edit1: TEdit
+    Left = 80
+    Top = 80
+    Width = 57
+    Height = 44
+    TabOrder = 0
+    Text = '5'
+  end
+  object Button1: TButton
+    Left = 152
+    Top = 80
+    Width = 89
+    Height = 41
+    Caption = 'Button1'
+    TabOrder = 1
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 304
+    Top = 200
+  end
+end
